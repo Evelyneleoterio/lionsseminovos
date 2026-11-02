@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Lions</title>
+    <script src="js/main.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+   <header class="header">
+    <div class="header-container">
+        <!-- Logo em formato de imagem por cima do fundo preto -->
+        <a href="index.html" class="logo">
+            <img src="assets/images/logo.png" alt="Lions Seminovos">
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">
+            <span class="menu-container">
+            <span class="menu-line"></span>
+            <span class="menu-line"></span>
+          </span>
+      </button>
+
+        <!-- Navegação -->
+        <nav class="nav-menu" id="navMenu" aria-label="Navegação principal">
+            <ul class="nav-list">
+                <li><a href="index.html" class="nav-link active">Página Inicial</a></li>
+                <li><a href="catalogo.html" class="nav-link">Catálogo</a></li>
+                <li><a href="agende-visita.html" class="nav-link btn-cta">Agende uma visita</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+<section class="hero">
+    <div class="frame" id="carousel">
+        <div class="carousel-viewport">
+            <div class="carousel-track">
+                <div class="carousel-slide">
+                    <div class="slide-media">
+                        <img src="assets/images/photo-3.png" alt="Descrição da imagem 3">
+                    </div>
+                    <div class="slide-body">
+                        <h2 class="slide-title">FIAT CRONOS</h2>
+                        <p class="slide-text">
+                              A partir de R$ 55.900,00
+                        </p>
+                        <a href="#" class="slide-link">Saiba mais &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="slide-media">
+                        <img src="assets/images/photo-4.png" alt="Descrição da imagem 4">
+                    </div>
+                    <div class="slide-body">
+                        <h2 class="slide-title">DUSTER</h2>
+                        <p class="slide-text">
+                            A partir de R$ 64.900,00
+                        </p>
+                        <a href="#" class="slide-link">Saiba mais &rarr;</a>
+                    </div>
+                </div>
+
+                <div class="carousel-slide">
+                    <div class="slide-media">
+                        <img src="assets/images/photo-5.png" alt="Descrição da imagem 4">
+                    </div>
+                    <div class="slide-body">
+                        <h2 class="slide-title">CARROS PARA APLICATIVOS</h2>
+                        <p class="slide-text">
+                            A partir de R$ 49.900,00
+                        </p>
+                        <a href="#" class="slide-link">Saiba mais &rarr;</a>
+                    </div>
+                </div>
+
+            </div>
+
+            <button class="carousel-btn prev" aria-label="Slide anterior">&#8249;</button>
+            <button class="carousel-btn next" aria-label="Próximo slide">&#8250;</button>
+
+            <div class="carousel-dots" role="tablist"></div>
+        </div>
+    </div>
+    </section>
+    
+    <section class="visita">
+    <div class="visita-container">
+        
+        <!-- Lado do Vídeo -->
+        <div class="visita-video">
+            <video id="video" controls playsinline autoplay muted loop></video>
+        </div>
+
+        <!-- Lado do Texto -->
+        <div class="visita-texto">
+            <h2>Conheça nossa loja</h2>
+            <p>Bancos dizem não? Nós falamos sim! <br> A solução certa para o seu financimento veicular esta aqui!</p>
+            <a href="agende-visita.html" class="btn-cta">Agende uma visita &rarr;</a>
+        </div>
+
+    </div>
+
+    <!-- Scripts do vídeo continuam aqui -->
+    <script src="https://cdn.jsdelivr.net/npm/hls.js@1.5.17/dist/hls.min.js"></script>
+    <script>
+       const video = document.getElementById('video');
+        const src = 'https://dmmfmlu2mykln.cloudfront.net/site/home/videoTeste/04526e36ecca4c9aae4080a844028fc5.m3u8';
+        video.muted = true; 
+
+        if (video.canPlayType('application/vnd.apple.mpegurl')) {
+            video.src = src;
+            // Tenta dar play (o catch evita erros no console se o navegador bloquear)
+            video.play().catch(error => console.log("Autoplay bloqueado:", error));
+        } else if (Hls.isSupported()) {
+            const hls = new Hls();
+            hls.loadSource(src);
+            hls.attachMedia(video);
+            
+            // Dá play assim que o vídeo estiver pronto
+            hls.on(Hls.Events.MANIFEST_PARSED, function() {
+                video.play().catch(error => console.log("Autoplay bloqueado:", error));
+            });
+        }
+    </script>
+</section>
+<section class="agevisita">
+    <div class="agevisita-container">
+        
+        <!-- COLUNA ESQUERDA: FORMULÁRIO -->
+        <div class="form-wrapper">
+            <h2>Agende sua visita</h2>
+            
+            <form action="#" method="POST" id="formAgendamento">
+                <!-- Seção: Dados pessoais -->
+                <div class="section-title"><span>Dados pessoais</span></div>
+                
+                <div class="input-row">
+                    <input type="text" placeholder="Nome completo" required>
+                    <input type="tel" placeholder="Telefone" required>
+                </div>
+                <div class="input-row">
+                    <input type="email" placeholder="E-mail" required>
+                </div>
+
+                <!-- Seção: Loja -->
+                <div class="section-title mt-20"><span>Loja</span></div>
+                
+                <div class="input-row">
+                    <div class="input-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        <select required>
+                            <option value="" disabled selected>Loja mais próxima</option>
+                            <option value="1">Loja Centro</option>
+                            <option value="2">Loja Zona Sul</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="input-row">
+                    <div class="input-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                        <input type="text" placeholder="Data" onfocus="(this.type='date')" onblur="(this.type='text')" required>
+                    </div>
+                    <div class="input-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                        <select required>
+                            <option value="" disabled selected>Horário</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="14:00">14:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-agendar">
+                    Agendar visita 
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+                </button>
+            </form>
+
+            <!-- MENSAGEM DE SUCESSO -->
+            <div id="mensagemSucesso" class="mensagem-sucesso" style="display: none;">
+                <svg viewBox="0 0 24 24" fill="none" stroke="#a30000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                <h3>Agendamento Concluído!</h3>
+                <p>Alguém da nossa equipe entrará em contato em breve para confirmar sua visita.</p>
+            </div>
+        </div>
+
+        <!-- COLUNA DIREITA: FOTO + TEXTO -->
+        <div class="content-wrapper">
+            <div class="imagem-loja">
+                <img src="assets/images/photo-6.png" alt="Interior da loja Lions Seminovos">
+            </div>
+            <div class="text-wrapper">
+                <h1>A LIONS ESTÁ COM VOCÊ<br>EM CADA ENCONTRO</h1>
+                <p>Na LIONS, cada visita é pensada para você. Um momento exclusivo, com atendimento humano e atenção aos detalhes que realmente importam. Aqui, você não é apenas mais um horário na agenda — é alguém com planos, dúvidas e expectativas que merecem ser respeitadas. Agende quando for melhor para você. Estamos prontos para receber, ouvir e ajudar no que for preciso.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+</body>
+</html>

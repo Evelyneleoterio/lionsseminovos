@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo Lions Seminovos</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/catalogo.css">
+</head>
+<body>
+
+    <!-- MAIN DO CATÁLOGO -->
+    <main class="catalogo-section">
+        <div class="catalogo-header">
+            <h1>Nosso Estoque</h1>
+            
+            <!-- Barra de Pesquisa -->
+            <div class="search-bar">
+                <input type="text" placeholder="Pesquisar" aria-label="Pesquisar veículo">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            </div>
+        </div>
+
+        <div class="catalogo-container">
+            
+            <!-- BARRA LATERAL DE FILTROS -->
+            <aside class="filtros-sidebar">
+                <div class="filtro-group">
+                    <label>Marca</label>
+                    <select><option>Selecione uma opção</option></select>
+                </div>
+                <div class="filtro-group">
+                    <label>Modelo</label>
+                    <select><option>Selecione uma opção</option></select>
+                </div>
+                <div class="filtro-group">
+                    <label>Cor</label>
+                    <select><option>Selecione uma opção</option></select>
+                </div>
+                <div class="filtro-group">
+                    <label>Combustível</label>
+                    <select><option>Selecione uma opção</option></select>
+                </div>
+                <div class="filtro-group">
+                    <label>Blindagem</label>
+                    <select><option>Selecione uma opção</option></select>
+                </div>
+
+                <!-- Filtro de Ano (Range) -->
+                <div class="filtro-group">
+                    <label>Ano modelo - <span id="ano-valor">2014 / 2026</span></label>
+                    <div class="range-slider">
+                        <input type="range" min="2010" max="2026" value="2015" class="slider">
+                    </div>
+                </div>
+
+                <!-- Filtro de Carroceria (Checkbox) -->
+                <div class="filtro-group">
+                    <label>Carroceria</label>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox"><input type="checkbox"> Hatch</label>
+                        <label class="custom-checkbox"><input type="checkbox"> Moto</label>
+                        <label class="custom-checkbox"><input type="checkbox"> Picape</label>
+                    </div>
+                </div>
+            </aside>
+
+            <!-- GRID DE CARROS -->
+            <section class="estoque-grid">
+                
+                <!-- Card 1 -->
+                <article class="car-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=600&auto=format&fit=crop" alt="Renault Logan">
+                    </div>
+                    <div class="card-content">
+                        <h2>RENAULT LOGAN LIFE10MT</h2>
+                        <div class="card-specs">
+                            <span>95.163 Km</span>
+                            <span>2022 / 2023</span>
+                            <span>Branca</span>
+                        </div>
+                        <div class="card-price">
+                            <strong>R$ 48.390,00</strong>
+                            <span class="price-note">*Consulte condições</span>
+                        </div>
+                        <button class="btn-simular">SIMULAR</button>
+                        <a href="#" class="link-atendente">Falar com um atendente</a>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="car-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=600&auto=format&fit=crop" alt="Volkswagen Gol">
+                    </div>
+                    <div class="card-content">
+                        <h2>VOLKSWAGEN GOL MPI</h2>
+                        <div class="card-specs">
+                            <span>31.750 Km</span>
+                            <span>2022 / 2023</span>
+                            <span>Branca</span>
+                        </div>
+                        <div class="card-price">
+                            <strong>R$ 46.990,00</strong>
+                            <span class="price-note">*Consulte condições</span>
+                        </div>
+                        <button class="btn-simular">SIMULAR</button>
+                        <a href="#" class="link-atendente">Falar com um atendente</a>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="car-card">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600&auto=format&fit=crop" alt="Chevrolet Onix">
+                    </div>
+                    <div class="card-content">
+                        <h2>CHEVROLET ONIX 10MT LTZ</h2>
+                        <div class="card-specs">
+                            <span>50.195 Km</span>
+                            <span>2023 / 2024</span>
+                            <span>Azul</span>
+                        </div>
+                        <div class="card-price">
+                            <strong>R$ 60.590,00</strong>
+                            <span class="price-note">*Consulte condições</span>
+                        </div>
+                        <button class="btn-simular">SIMULAR</button>
+                        <a href="#" class="link-atendente">Falar com um atendente</a>
+                    </div>
+                </article>
+
+            </section>
+        </div>
+    </main>
+
+</body>
+</html>
