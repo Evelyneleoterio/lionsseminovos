@@ -33,6 +33,10 @@ O desenvolvimento foi pensado para entregar um código limpo, de fácil manuten�
 
 - Uso de Variáveis CSS (`:root`) para centralizar as cores da marca (ex: `--accent-red: #a30000`), facilitando a alteração de temas no futuro.
 
+### Para acessar Clique no link abaixo
+
+Para acessar clique aqui: https://evelyneleoterio.github.io/lionsseminovos/
+
 ## 📂 Organização do Código
 
 O projeto está organizado visando a separação de responsabilidades:
