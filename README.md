@@ -47,6 +47,8 @@ O projeto está organizado visando a separação de responsabilidades:
 │
 ├── 📁 js/
 │   └── main.js           # Lógica do menu, carrossel, animações e form
+
+Para acessar clique aqui: https://evelyneleoterio.github.io/lionsseminovos/
 │
 ├── index.html            # Página inicial (Hero, Vídeo, Agendamento)
 ├── catalogo.html         # Página de estoque (Filtros e Grid de carros)
