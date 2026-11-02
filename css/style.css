@@ -662,6 +662,13 @@ form select {
     }
 }
 
+ html {
+  scroll-behavior: smooth;
+}
+
+#agendar {
+  scroll-margin-top: 90px;
+}
 
 /* ==========================================
    DESKTOP
@@ -788,4 +795,6 @@ form select {
     .text-wrapper p {
         font-size: 1rem;
     }
+
+   
 }
